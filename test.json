@@ -1,0 +1,46 @@
+{
+  "objects": [
+    {
+      "maximumRetries": "0",
+      "name": "Execute Equifax file generator",
+      "id": "ShellCommandActivityId_TjVZf",
+      "runsOn": {
+        "ref": "ResourceId_dZrst"
+      },
+      "type": "ShellCommandActivity",
+      "command": "uname"
+    },
+	{
+      "maximumRetries": "0",
+      "name": "Execute Equifax file generator",
+      "id": "ShellCommandActivityId_TjVZb",
+      "runsOn": {
+        "ref": "ResourceId_dZrst"
+      },
+      "type": "ShellCommandActivity",
+      "command": "date"
+    },
+    {
+      "failureAndRerunMode": "CASCADE",
+      "resourceRole": "datapipeline",
+      "role": "rolesns",
+      "scheduleType": "ONDEMAND",
+      "name": "Default",
+      "id": "Default",
+      "type": "Default"
+    },
+    {
+      "subnetId": "subnet-ff710b9",
+      "resourceRole": "datapipeline",
+      "role": "role-datapipeline",
+      "imageId": "ami-0b5eea76982371e91",
+      "securityGroupIds": "sg-00f8291af3f48a148",
+      "instanceType": "t2.micro",
+      "name": "On demand EC2 instance",
+      "id": "ResourceId_dZrst",
+      "type": "Ec2Resource",
+      "region": "us-east-1"
+    }
+  ],
+  "parameters": []
+}
